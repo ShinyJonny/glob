@@ -17,8 +17,7 @@
 	padding: 2.2em;
 	margin-top: var(--layout-gap-size);
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: column;
 	align-items: center;
 	background-image: linear-gradient(var(--panel-gradient-deg), var(--bg-lighter-color), var(--bg-medium-color));
 	color: var(--fg-dim-color);
