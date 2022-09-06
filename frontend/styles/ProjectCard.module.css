@@ -1,0 +1,151 @@
+.card {
+	--outer-gap-size: 1em;
+	--inner-gap-size: 1em;
+	--desc-line-height: 1.3em;
+}
+
+.card {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	border: var(--border-size-thinner) solid var(--bg-lighter-color);
+	background: var(--bg-color);
+	position: relative;
+	z-index: 0;
+	max-width: 1fr;
+	font-size: clamp(0.9rem, 4vw, 1rem);
+}
+
+.card::after {
+	content: "";
+	display: block;
+	background: var(--accent-color);
+	position: absolute;
+	top: calc(var(--border-size-thinner) * -1);
+	right: calc(var(--border-size-thinner) * -1);
+	bottom: calc(var(--border-size-thinner) * -1);
+	left: calc(var(--border-size-thinner) * -1);
+	width: 35px;
+	height: 35px;
+	z-index: -1;
+}
+
+.card::before {
+	content: "";
+	display: block;
+	background: var(--accent-color);
+	position: absolute;
+	top: calc(var(--border-size-thinner) * -1);
+	right: calc(var(--border-size-thinner) * -1);
+	bottom: calc(var(--border-size-thinner) * -1);
+	left: calc(var(--border-size-thinner) * -1);
+	z-index: -1;
+	transform: scale(0);
+	transform-origin: top left;
+	transition: 200ms ease-in-out;
+}
+
+.card:hover::before,
+.card:focus::before {
+	transform: none;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	gap: var(--inner-gap-size);
+	padding: var(--outer-gap-size);
+	flex-grow: 1;
+	flex-shrink: 1;
+	background: var(--bg-color);
+}
+
+.topLine {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	column-gap: 0.13em;
+	row-gap: 0.5em;
+}
+
+.titleLine {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--inner-gap-size);
+	flex-basis: max-content;
+	padding-right: 0.5em;
+}
+
+.profileImage {
+	flex-shrink: 0;
+	width: clamp(60px, 8vw, 90px) !important;
+	height: clamp(60px, 8vw, 90px) !important;
+	border: var(--border-size-thinner) solid var(--bg-lighter-color);
+}
+
+.title {
+	display: inline-block;
+	flex-basis: max-content;
+	font-size: 1.4em;
+	font-weight: 600;
+	color: var(--accent-color);
+}
+
+.titleLink {
+	border-bottom: var(--border-size-thinner) solid var(--transparent);
+	transition: border-color, 200ms ease-in-out;
+}
+
+.titleLink:hover,
+.titleLink:focus {
+	outline: none;
+	border-color: var(--accent-color);
+}
+
+.description {
+	width: 100%;
+	line-height: var(--desc-line-height);
+}
+
+.controls {
+	flex-shrink: 0;
+	border-left: var(--border-size-thinner) solid var(--bg-lighter-color);
+	padding: var(--outer-gap-size);
+	gap: var(--inner-gap-size);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-color);
+}
+
+.controls > * {
+	flex-shrink: 0;
+}
+
+.controlIcon {
+	width: 45px;
+	height: 45px;
+	--icon-color: var(--fg-dim-color);
+	--border-color: #00000000;
+	--highlight-color: var(--accent-color);
+}
+
+@media (max-width: 799px) {
+	.card {
+		flex-direction: column;
+	}
+
+	.controls {
+		flex-direction: row;
+		border-left: none;
+		border-top: var(--border-size-thinner) solid var(--bg-lighter-color);
+	}
+
+	.description {
+		white-space: normal;
+	}
+}

@@ -1,0 +1,11 @@
+.projectGrid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: min(var(--page-padding), 1.5rem);
+}
+
+@media (max-width: 1500px) {
+	.projectGrid {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,0 +1,40 @@
+.link {
+	--color: var(--fg-dim-color);
+	--text-padding-left: 0em;
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	color: var(--color);
+	width: max-content;
+	gap: 1em;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	fill: var(--color);
+}
+
+.text {
+	padding-left: var(--text-padding-left);
+}
+
+.text,
+.icon {
+	transition: padding, color, fill, var(--link-tr-duration) var(--link-tr-style);
+}
+
+.link:hover,
+.link:focus {
+	--color: var(--accent-color);
+	--text-padding-left: 1em;
+	outline: none;
+}
+
+@media (max-width: 799px) {
+	.text {
+		display: none;
+	}
+}

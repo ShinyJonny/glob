@@ -1,0 +1,116 @@
+.page {
+	--page-header-font-size: clamp(1.2rem, 8vw ,1.9rem);
+	--page-header-height: calc(var(--page-header-font-size) * 1.8);
+	--heading-height: clamp(1.3rem, 7vw ,1.8rem);
+	--section-gap: calc(var(--heading-height) * 0.75);
+	--scale-rate: 1.13;
+}
+
+.page {
+	position: relative;
+	padding: var(--page-padding);
+	padding-top: calc(var(--page-header-font-size) + var(--page-padding));
+	background: linear-gradient(to bottom right, var(--bg-lighter-color), var(--bg-medium-color));
+	animation: slideAndFadeIn 1.5s ease forwards;
+	margin: 0 auto;
+}
+
+.pageMedium {
+	max-width: 794px;
+}
+
+.pageHeaderWrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	top: calc(var(--page-header-height) / -2);
+	width: calc(100% - calc(var(--page-padding) * 2));
+	font-size: var(--page-header-font-size);
+}
+
+.pageHeaderContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.pageHeader {
+	position: relative;
+}
+
+.endContainer {
+ position: relative;
+ width: var(--page-header-height) ;
+ z-index: -1;
+}
+
+.end {
+    position: absolute;
+    width: auto;
+    height: var(--page-header-height);
+}
+
+.endBack {
+	fill: var(--bg-lighter-color);
+	transform: scale(var(--scale-rate));
+	z-index: -1;
+}
+
+.endFront {
+	fill: var(--bg-color);
+	z-index: 0;
+}
+
+.endLeft {
+	right: -0.2em;
+	transform-origin: right;
+}
+
+.endRight {
+	left: -0.2em;
+	transform-origin: left;
+}
+
+.pageHeader::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: var(--bg-lighter-color);
+	transform: scaleY(var(--scale-rate));
+	z-index: -2;
+}
+
+.pageHeaderText {
+	line-height: var(--page-header-height);
+	color: var(--accent-color);
+	background: var(--bg-color);
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.07em;
+	font-size: 1em;
+}
+
+.section {
+	padding-top: var(--section-gap);
+}
+
+.firstSection {
+	padding-top: 0;
+}
+
+.heading {
+	color: var(--accent-color);
+	font-size: var(--heading-height);
+	font-weight: 400;
+	line-height: 1em;
+	padding-bottom: 0.75em;
+}
+
+@keyframes slideAndFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-5rem);
+	}
+}

@@ -1,0 +1,107 @@
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: block;
+}
+
+html {
+  font-size: 0.8em;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* General */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+	--transparent: #00000000;
+	--bg-color: #1a1a1a;
+	--bg-medium-color: #1f1f1f;
+	--bg-lighter-color: #333333;
+	--fg-color: #e6e6e6;
+	--fg-dim-color: #808080;
+	--accent-color: #00d4aa;
+
+	--wip-tag-color: #ffa000;
+	--c-tag-color: #5c6bc0;
+	--rust-tag-color: #ff6a04;
+
+	--panel-gradient-deg: 95deg;
+
+	--border-size-thicker: 5px;
+	--border-size-thinner: 3px;
+
+	--min-layout-gap-size: 0.7rem;
+	--max-layout-gap-size: 4.2rem;
+  --layout-gap-size: clamp(
+		var(--min-layout-gap-size),
+		5vw,
+		var(--max-layout-gap-size)
+	);
+	--overlay-gap-size: calc(var(--layout-gap-size) * 0.8);
+  --page-padding: clamp(var(--min-layout-gap-size), 5vw, 2.8rem);
+
+	--link-tr-duration: 200ms;
+	--link-tr-style: ease-in-out;
+
+	color: var(--fg-color);
+	background-color: var(--bg-color);
+  font-size: 16pt;
+}
+
+@keyframes resetOpacityAndTransform {
+  to {
+    opacity: 100;
+    transform: rotate(0deg) translateY(0em);
+  }
+}
+
+/* Utilities */
+
+.link {
+	transition: color, background-color, border-color, var(--link-tr-duration) var(--link-tr-style);
+}
+
+.link:hover,
+.link:focus {
+	color: var(--accent-color);
+	outline: none;
+}

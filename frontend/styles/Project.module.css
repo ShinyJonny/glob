@@ -1,0 +1,43 @@
+.profile {
+	--profile-size: clamp(190px, 40vw, 250px);
+}
+
+.profileWrapper {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 1rem;
+}
+
+.profileWrapper > * {
+	flex-shrink: 0;
+}
+
+.profile {
+	width: var(--profile-size) !important;
+	height: var(--profile-size) !important;
+	border: var(--border-size-thinner) solid var(--bg-lighter-color);
+}
+
+.linkList {
+	list-style: none;
+	padding-left: 1em;
+}
+
+.linkLine {
+	display: flex;
+	width: max-content;
+	gap: 0.5em;
+	align-items: center;
+	--icon-color: var(--fg-dim-color);
+	color: var(--fg-dim-color);
+}
+
+.linkLine:hover,
+.linkLine:focus {
+	--icon-color: var(--accent-color);
+}
+
+.linkIcon {
+	width: 1.5em;
+	height: 1.5em;
+}
