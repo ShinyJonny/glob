@@ -47,4 +47,13 @@ export const projectDataList: Array<ProjectData> = [
       "A very simple terminal game inspired by NetHack. The game has no dependencies and uses print statements to render graphics. This is the very first proper program that I ever wrote.",
     tags: ["c"],
   },
+  {
+    id: "glob",
+    name: "Glob",
+    repo: "https://github.com/ShinyJonny/glob",
+    shortDesc: "The source code of this site.",
+    description:
+      "My personal site and portfolio. It is written in TypeScript, using NextJS in SSG mode. This project is the source code for this site.",
+    tags: ["web", "ts"],
+  },
 ];

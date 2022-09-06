@@ -23,6 +23,14 @@
 	--tag-color: var(--rust-tag-color);
 }
 
+.webTag {
+	--tag-color: var(--web-tag-color);
+}
+
+.tsTag {
+	--tag-color: var(--ts-tag-color);
+}
+
 .tagGroup {
 	display: flex;
 	column-gap: 0.13em;

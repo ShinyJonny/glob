@@ -18,6 +18,12 @@ const Tag: React.FC<Props> = ({ tagType }) => {
   } else if (tagType == "rust") {
     typeClassName = styles.rustTag;
     text = "Rust";
+  } else if (tagType == "web") {
+    typeClassName = styles.webTag;
+    text = "WEB";
+  } else if (tagType == "ts") {
+    typeClassName = styles.tsTag;
+    text = "TS";
   } else {
     console.error(`unknown Tag type: ${tagType}`);
     return <></>;
