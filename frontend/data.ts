@@ -15,7 +15,7 @@ export const projectDataList: Array<ProjectData> = [
     repo: "https://github.com/ShinyJonny/fsfill",
     shortDesc: "Fill unused space in the file system structure with bytes.",
     description:
-      "CLI utility that scans the file system structure and keeps track of the free (uninitialised) space. This space can then be filled with bytes. Essentially, it allows the user to zero-fill the drive even after the file system has been installed. This can be used to achieve plausible deniability on block-encrypted media (e.g. dm-crypt) that has not been filled with ramdom bytes during of the initialisation.",
+      "CLI utility that scans the file system structure and keeps track of the free (uninitialised) space. This space can then be filled with bytes. Essentially, it allows the user to zero-fill the drive even after the file system has been installed. This can be used to achieve plausible deniability on block-encrypted media (e.g. dm-crypt) that has not been filled with random bytes during the initialisation.",
     tags: ["wip", "rust"],
   },
   {
