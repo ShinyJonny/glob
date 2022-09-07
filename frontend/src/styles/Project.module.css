@@ -41,3 +41,29 @@
 	width: 1.5em;
 	height: 1.5em;
 }
+
+.description {
+	font-size: clamp(0.8rem, 4vw, 1rem);
+}
+
+.description h1,
+.description h2,
+.description h3 {
+	font-weight: 400;
+	color: var(--accent-color);
+	line-height: 1.7em;
+}
+
+.description h1 {
+	font-size: 1.4em;
+	text-decoration: underline;
+}
+
+.description h2 {
+	font-size: 1.2em;
+}
+
+.description h3 {
+	font-size: 1.1em;
+	font-style: italic;
+}
