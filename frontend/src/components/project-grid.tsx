@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/ProjectGrid.module.css";
-import type { ProjectData } from "../data";
+import type { ProjectData } from "../lib";
 import ProjectCard from "./project-card";
 
 interface Props {
@@ -12,13 +12,13 @@ const ProjectGrid: React.FC<Props> = ({ projects }) => {
     <ItemGrid>
       {projects.map((p, i) => (
         <ProjectCard
-          key={p.repo}
+          key={p.metadata.repo}
           id={p.id}
-          name={p.name}
-          repo={p.repo}
-          description={p.shortDesc}
-          profileImage={p.profileImage}
-          tags={p.tags ? p.tags : []}
+          name={p.metadata.name}
+          repo={p.metadata.repo}
+          description={p.metadata.description}
+          profileImage={p.metadata.profileImage}
+          tags={p.metadata.tags || []}
           animationDelay={300 + i * 100}
         />
       ))}

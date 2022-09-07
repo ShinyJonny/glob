@@ -4,8 +4,8 @@ import Layout from "../components/layout";
 import Page from "../components/page";
 import ProjectGrid from "../components/project-grid";
 import { siteName } from "../config";
-import { projectDataList } from "../data";
-import type { ProjectData } from "../data";
+import type { ProjectData } from "../lib";
+import { getAllProjects } from "../lib";
 import { PageSize } from "../components/page";
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 export async function getStaticProps(): Promise<{ props: Props }> {
   return {
-    props: { projects: projectDataList },
+    props: { projects: await getAllProjects() },
   };
 }
 

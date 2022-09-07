@@ -9,15 +9,17 @@ import { TagGroup } from "../../components/tag";
 import Icon from "../../components/icon";
 import BackButton from "../../components/back-button";
 import { siteName } from "../../config";
-import { projectDataList } from "../../data";
-import type { ProjectData } from "../../data";
+import { getProjectIds, getProject } from "../../lib";
+import type { ProjectData } from "../../lib";
 
 export async function getStaticPaths() {
+  const ids = await getProjectIds();
+
   return {
-    paths: projectDataList.map((p) => {
+    paths: ids.map((id) => {
       return {
         params: {
-          id: p.id,
+          id,
         },
       };
     }),
@@ -37,8 +39,11 @@ export async function getStaticProps(
   }
 
   const projectId = context.params.id;
-  const project = projectDataList.find((p) => p.id == projectId);
+  if (typeof projectId !== "string") {
+    throw `invalid type of id: ${typeof projectId}`;
+  }
 
+  const project = await getProject(projectId);
   if (!project) {
     throw `Couldn't get project with ID: ${projectId}`;
   }
@@ -52,23 +57,28 @@ const Projects: NextPage<Props> = ({ project }) => {
   return (
     <Layout>
       <Head>
-        <title>{`${siteName} - ${project.name}`}</title>
+        <title>{`${siteName} - ${project.metadata.name}`}</title>
       </Head>
-      <Page title={project.name} size={PageSize.Medium}>
-        <ProjectProfile src={project.profileImage || "/project-profile.svg"} />
+      <Page title={project.metadata.name} size={PageSize.Medium}>
+        <ProjectProfile
+          src={project.metadata.profileImage || "/project-profile.svg"}
+        />
 
         <Section>
-          <TagGroup tags={project.tags || []} />
+          <TagGroup tags={project.metadata.tags || []} />
         </Section>
         <Section>
           <Heading>Description</Heading>
-          <p>{project.description}</p>
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: project.body }}
+          />
         </Section>
         <Section>
           <Heading>Links</Heading>
           <LinkList>
             <LinkLine
-              href={project.repo}
+              href={project.metadata.repo}
               iconSrc={"/code.svg"}
               text={"Source Code"}
             />
