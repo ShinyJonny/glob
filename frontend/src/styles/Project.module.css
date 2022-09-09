@@ -67,3 +67,15 @@
 	font-size: 1.1em;
 	font-style: italic;
 }
+
+.description a {
+	color: var(--page-link-color);
+	font-weight: 600;
+	transition: color, var(--link-tr-duration) var(--link-tr-style);
+}
+
+.description a:hover,
+.description a:focus {
+	color: var(--accent-color);
+	outline: none;
+}
