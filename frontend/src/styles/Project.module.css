@@ -70,6 +70,7 @@
 
 .description a {
 	color: var(--page-link-color);
+	text-decoration: underline;
 	font-weight: 600;
 	transition: color, var(--link-tr-duration) var(--link-tr-style);
 }
