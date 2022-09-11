@@ -26,16 +26,6 @@ const Footer: React.FC = () => (
         Next.JS
       </a>
     </span>
-    <span>
-      This work is licensed under{" "}
-      <a
-        rel="license"
-        href="http://creativecommons.org/licenses/by-sa/4.0/"
-        className={"link"}
-      >
-        CC BY-SA 4.0
-      </a>
-      .
-    </span>
+    <span> © Copyright 2022 ShinyJonny</span>
   </div>
 );
