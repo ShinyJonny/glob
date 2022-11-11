@@ -73,7 +73,7 @@ const Overlay: React.FC = () => {
         <ProfileInfoField name="Name" value="ShinyJonny" />
         <ProfileInfoField
           name="Occupation"
-          value="Student of Cyber Security (BSc)"
+          value="React Developer and Security Analyst"
         />
       </ProfileInfo>
       <NavToggle
@@ -128,7 +128,7 @@ const Navbar: React.FC<NavbarProps> = ({ items, navRef }) => {
       <div ref={navRef} className={styles.navContainer} style={{ transition }}>
         <nav className={styles.navBar}>
           <ul className={styles.navList}>
-            {items.map((item) => (
+            {items.map(item => (
               <li key={item.name}>
                 <NavItem
                   name={item.name}
@@ -156,8 +156,9 @@ const NavItem: React.FC<NavItemProps> = ({ name, href, active }) => (
     <a
       onClick={
         // NOTE: has to be cleaned up here because of js-based client-side route transitioning (See `next/link`).
-        unlockBody
+        active ? undefined : unlockBody
       }
+      style={active ? { pointerEvents: "none" } : undefined}
       className={`link ${active ? styles.activeItem : ""}`}
     >
       {name}
