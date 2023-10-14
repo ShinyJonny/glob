@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage, GetStaticPropsContext } from "next";
 import Head from "next/head";
-import Image from "next/future/image";
+import Image from "next/image";
 import styles from "../../styles/Project.module.css";
 import Layout from "../../components/layout";
 import Page, { PageSize, Section, Heading } from "../../components/page";

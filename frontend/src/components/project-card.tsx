@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/ProjectCard.module.css";
 import { LinkIcon } from "./icon";
@@ -62,8 +62,8 @@ const CardBody: React.FC<Props> = ({
           className={styles.profileImage}
         />
         <h2 className={styles.title}>
-          <Link href={`/projects/${id}`}>
-            <a className={styles.titleLink}>{name}</a>
+          <Link className={styles.titleLink} href={`/projects/${id}`}>
+            {name}
           </Link>
         </h2>
       </div>

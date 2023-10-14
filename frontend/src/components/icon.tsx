@@ -58,10 +58,8 @@ export const LinkIcon: React.FC<LinkIconProps> = ({
       <InnerIcon src={src} />
     </a>
   ) : (
-    <Link href={href}>
-      <a className={cn}>
-        <InnerIcon src={src} />
-      </a>
+    <Link className={cn} href={href}>
+      <InnerIcon src={src} />
     </Link>
   );
 };

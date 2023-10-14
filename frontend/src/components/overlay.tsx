@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import type { RefObject } from "react";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "../styles/Overlay.module.css";
 import { LinkIcon } from "./icon";
@@ -152,17 +152,16 @@ interface NavItemProps {
 }
 
 const NavItem: React.FC<NavItemProps> = ({ name, href, active }) => (
-  <Link href={href}>
-    <a
-      onClick={
-        // NOTE: has to be cleaned up here because of js-based client-side route transitioning (See `next/link`).
-        active ? undefined : unlockBody
-      }
-      style={active ? { pointerEvents: "none" } : undefined}
-      className={`link ${active ? styles.activeItem : ""}`}
-    >
+  <Link
+    href={href}
+    onClick={
+      // NOTE: has to be cleaned up here because of js-based client-side route transitioning (See `next/link`).
+      active ? undefined : unlockBody
+    }
+    style={active ? { pointerEvents: "none" } : undefined}
+    className={`link ${active ? styles.activeItem : ""}`}
+  >
       {name}
-    </a>
   </Link>
 );
 

@@ -9,11 +9,9 @@ interface BackButtonProps {
 }
 
 const BackButton: React.FC<BackButtonProps> = ({ href, destination }) => (
-  <Link href={href}>
-    <a className={styles.link}>
-      <ArrowLeft className={styles.icon} />
-      <span className={styles.text}>Back to {destination}</span>
-    </a>
+  <Link className={styles.link} href={href}>
+    <ArrowLeft className={styles.icon} />
+    <span className={styles.text}>Back to {destination}</span>
   </Link>
 );
 
