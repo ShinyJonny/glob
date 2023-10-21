@@ -1,40 +1,6 @@
-/* CSS Reset */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  display: block;
-}
-
-html {
-  font-size: 0.8em;
-}
-
-img {
-  max-width: 100%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* General */
 
@@ -73,7 +39,7 @@ a {
 	--border-size-thinner: 3px;
 
 	--min-layout-gap-size: 0.7rem;
-	--max-layout-gap-size: 4.2rem;
+	--max-layout-gap-size: 2.2rem;
   --layout-gap-size: clamp(
 		var(--min-layout-gap-size),
 		5vw,
@@ -87,7 +53,6 @@ a {
 
 	color: var(--fg-color);
 	background-color: var(--bg-color);
-  font-size: 16pt;
 }
 
 @keyframes resetOpacityAndTransform {

@@ -73,7 +73,7 @@ const Overlay: React.FC = () => {
         <ProfileInfoField name="Name" value="ShinyJonny" />
         <ProfileInfoField
           name="Occupation"
-          value="React Developer and Security Analyst"
+          value="Software and Security Engineer"
         />
       </ProfileInfo>
       <NavToggle
@@ -92,8 +92,8 @@ const ProfileImage: React.FC = () => (
     src="/logo.svg"
     alt="Profile picture"
     priority={true}
-    width={250}
-    height={250}
+    width={280}
+    height={280}
     className={styles.profileImage}
   />
 );

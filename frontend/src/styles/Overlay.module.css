@@ -1,6 +1,6 @@
 .container,
 .container * {
-	--profile-image-size: clamp(100px, 58vw, 355px);
+	--profile-image-size: clamp(80px, 47vw, 280px);
 }
 
 .container {

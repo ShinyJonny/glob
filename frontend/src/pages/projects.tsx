@@ -12,7 +12,7 @@ interface Props {
   projects: Array<ProjectData>;
 }
 
-export async function getStaticProps(): Promise<{ props: Props }> {
+export const getStaticProps = async (): Promise<{ props: Props }> => {
   return {
     props: { projects: await getAllProjects() },
   };
