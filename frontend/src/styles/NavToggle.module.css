@@ -52,7 +52,7 @@
 	transition: rotate, stroke, fill, var(--anim-duration) var(--anim-mode);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
 	.container {
 			display: flex;
 	}

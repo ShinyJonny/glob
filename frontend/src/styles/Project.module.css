@@ -1,5 +1,5 @@
 .profile {
-	--profile-size: clamp(190px, 40vw, 250px);
+	--profile-size: clamp(150px, 32vw, 200px);
 }
 
 .profileWrapper {

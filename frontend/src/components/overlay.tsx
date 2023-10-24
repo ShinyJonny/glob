@@ -92,8 +92,8 @@ const ProfileImage: React.FC = () => (
     src="/logo.svg"
     alt="Profile picture"
     priority={true}
-    width={280}
-    height={280}
+    width={220}
+    height={220}
     className={styles.profileImage}
   />
 );
@@ -159,7 +159,7 @@ const NavItem: React.FC<NavItemProps> = ({ name, href, active }) => (
       active ? undefined : unlockBody
     }
     style={active ? { pointerEvents: "none" } : undefined}
-    className={`link ${active ? styles.activeItem : ""}`}
+    className={`link ${active ? styles.activeItem : styles.inactiveItem}`}
   >
       {name}
   </Link>

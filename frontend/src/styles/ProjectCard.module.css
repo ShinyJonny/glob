@@ -46,8 +46,8 @@
 	transition: 200ms ease-in-out;
 }
 
-.card:hover::before,
-.card:focus::before {
+.card:has(.titleLink:hover)::before,
+.card:has(.titleLink:focus)::before {
 	transform: none;
 }
 
@@ -81,8 +81,8 @@
 
 .profileImage {
 	flex-shrink: 0;
-	width: clamp(60px, 8vw, 90px) !important;
-	height: clamp(60px, 8vw, 90px) !important;
+	width: clamp(60px, 15vw, 80px) !important;
+	height: clamp(60px, 15vw, 80px) !important;
 	border: var(--border-size-thinner) solid var(--bg-lighter-color);
 }
 
@@ -134,7 +134,7 @@
 	--highlight-color: var(--accent-color);
 }
 
-@media (max-width: 799px) {
+@media (max-width: 768px) {
 	.card {
 		flex-direction: column;
 	}

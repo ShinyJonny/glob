@@ -1,6 +1,6 @@
 .container,
 .container * {
-	--profile-image-size: clamp(80px, 47vw, 280px);
+	--profile-image-size: clamp(80px, 47vw, 220px);
 }
 
 .container {
@@ -59,6 +59,11 @@
 	padding: 1.1em 0;
 }
 
+.inactiveItem {
+	color: #aaa;
+	font-weight: 600;
+}
+
 .activeItem {
 	color: var(--accent-color);
 	font-weight: 600;
@@ -87,8 +92,8 @@
 }
 
 .socialIcon {
-	width: 35px;
-	height: 35px;
+	width: 1.5em;
+	height: 1.5em;
 	--icon-color: var(--fg-dim-color);
 	--highlight-color: var(--accent-color);
 }
@@ -130,7 +135,7 @@
 	color: var(--accent-color);
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1024px) {
 	.container {
 		grid-template-columns: auto 1fr auto;
 	}
@@ -213,7 +218,7 @@
 	}
 }
 
-@media (max-width: 799px) {
+@media (max-width: 768px) {
 	.container {
 		grid-template-columns: auto 1fr;
 		padding-bottom: calc(var(--layout-gap-size) + 2rem);

@@ -21,9 +21,11 @@ const ProjectCard: React.FC<Props> = (props) => {
   const initialAnimDuration = 150;
 
   useEffect(() => {
-    setTimeout(() => {
+    const tim = setTimeout(() => {
       setLoaded(true);
     }, delay + initialAnimDuration);
+
+    return () => clearTimeout(tim);
   }, [delay]);
 
   let style = !loaded
@@ -57,8 +59,8 @@ const CardBody: React.FC<Props> = ({
         <Image
           src={profileImage ? profileImage : "/project-profile.svg"}
           alt={`Profile image of the project ${name}`}
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className={styles.profileImage}
         />
         <h2 className={styles.title}>

@@ -102,8 +102,8 @@ const ProjectProfile: React.FC<ProjectProfileProps> = ({ src }) => (
     <Image
       src={src}
       alt="Project profile image"
-      width={250}
-      height={250}
+      width={200}
+      height={200}
       className={styles.profile}
     />
   </div>
