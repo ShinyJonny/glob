@@ -75,6 +75,10 @@
 	transition: color, var(--link-tr-duration) var(--link-tr-style);
 }
 
+.description p {
+	padding-bottom: 1.5em;
+}
+
 .description a:hover,
 .description a:focus {
 	color: var(--accent-color);

@@ -32,7 +32,7 @@ const Footer = () => {
           Next.JS
         </a>
       </span>
-      <span> © Copyright 2022-2023 ShinyJonny</span>
+      <span> © Copyright 2022-2024 ShinyJonny</span>
     </div>
   )
 };
