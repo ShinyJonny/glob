@@ -45,3 +45,34 @@ export const TagGroup: React.FC<TagGroupProps> = ({ tags }) => (
     ))}
   </div>
 );
+
+export const ProfileTag: React.FC<Props> = ({ tagType }) => {
+  let text: string;
+
+  if (tagType == "wip") {
+    text = "WIP";
+  } else if (tagType == "c") {
+    text = "C";
+  } else if (tagType == "rust") {
+    text = "RS";
+  } else if (tagType == "web") {
+    text = "WEB";
+  } else if (tagType == "ts") {
+    text = "TS";
+  } else {
+    console.error(`unknown Tag type: ${tagType}`);
+    return <></>;
+  }
+
+  return (
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      height: "100%",
+    }} className={styles.profileTagGenCont}>
+      <span className={`${styles.profileTag} ${styles.plainTag}`}>{text}</span>
+    </div>
+  );
+};

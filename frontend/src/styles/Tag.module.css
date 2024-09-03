@@ -11,6 +11,21 @@
 	font-weight: 600;
 }
 
+.profileTag {
+	font-size: 0.5em;
+	color: var(--tag-color);
+	user-select: none;
+	font-weight: 900;
+}
+
+.profileTagGenCont {
+	background: var(--bg-color);
+}
+
+.plainTag {
+	--tag-color: var(--fg-muted-color);
+}
+
 .wipTag {
 	--tag-color: var(--wip-tag-color);
 }

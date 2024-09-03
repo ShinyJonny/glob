@@ -83,6 +83,7 @@
 	flex-shrink: 0;
 	width: clamp(60px, 15vw, 80px) !important;
 	height: clamp(60px, 15vw, 80px) !important;
+	font-size: clamp(60px, 15vw, 80px);
 	border: var(--border-size-thinner) solid var(--bg-lighter-color);
 }
 
@@ -113,7 +114,7 @@
 .controls {
 	flex-shrink: 0;
 	border-left: var(--border-size-thinner) solid var(--bg-lighter-color);
-	padding: var(--outer-gap-size);
+	padding: var(--outer-gap-size) calc(var(--outer-gap-size) / 2);
 	gap: var(--inner-gap-size);
 	display: flex;
 	flex-direction: column;
@@ -127,8 +128,8 @@
 }
 
 .controlIcon {
-	width: 45px;
-	height: 45px;
+	width: 30px;
+	height: 30px;
 	--icon-color: var(--fg-dim-color);
 	--border-color: #00000000;
 	--highlight-color: var(--accent-color);

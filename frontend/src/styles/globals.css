@@ -22,8 +22,11 @@ a {
 	--bg-color: #1a1a1a;
 	--bg-medium-color: #1f1f1f;
 	--bg-lighter-color: #333333;
+	--bg-light-color: #555555;
+	--panel-end-color: #252525;
 	--fg-color: #e6e6e6;
-	--fg-dim-color: #808080;
+	--fg-muted-color: #808080;
+	--fg-dim-color: #aaaaaa;
 	--accent-color: #00d4aa;
 	--page-link-color: #90c3ba;
 
@@ -46,7 +49,7 @@ a {
 		var(--max-layout-gap-size)
 	);
 	--overlay-gap-size: calc(var(--layout-gap-size) * 0.8);
-  --page-padding: clamp(var(--min-layout-gap-size), 5vw, 2.8rem);
+  --page-padding: clamp(var(--min-layout-gap-size), 5vw, 2.5rem);
 
 	--link-tr-duration: 200ms;
 	--link-tr-style: ease-in-out;

@@ -19,14 +19,14 @@
 	right: 0;
 	width: 35px;
 	height: 5px;
-	background: var(--bg-lighter-color);
+	background: var(--bg-light-color);
 }
 
 .navContainer {
 	display: flex;
 	margin-top: 1.7rem;
 	height: max-content;
-	background: linear-gradient(var(--panel-gradient-deg), var(--bg-lighter-color), var(--bg-medium-color));
+	background: linear-gradient(var(--panel-gradient-deg), var(--bg-lighter-color), var(--panel-end-color));
 	font-size: 1.25rem;
 	
 }
@@ -94,7 +94,7 @@
 .socialIcon {
 	width: 1.5em;
 	height: 1.5em;
-	--icon-color: var(--fg-dim-color);
+	--icon-color: var(--fg-muted-color);
 	--highlight-color: var(--accent-color);
 }
 

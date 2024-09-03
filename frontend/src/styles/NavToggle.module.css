@@ -3,7 +3,7 @@
 	--anim-duration: 500ms;
 	--anim-mode: ease-out;
 	/* changing */
-	--color: var(--bg-lighter-color);
+	--color: var(--bg-light-color);
 	--ring-transform: none;
 }
 

@@ -172,12 +172,14 @@ const SocialGroup: React.FC = () => (
       href="http://www.github.com/ShinyJonny"
       external={true}
       className={styles.socialIcon}
+      decoration="none"
     />
     <LinkIcon
       src="/square-gitlab-brands.svg"
       href="http://www.gitlab.com/ShinyJonny"
       external={true}
       className={styles.socialIcon}
+      decoration="none"
     />
   </div>
 );

@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../../styles/Project.module.css";
 import Layout from "../../components/layout";
 import Page, { PageSize, Section, Heading } from "../../components/page";
-import { TagGroup } from "../../components/tag";
+import { ProfileTag, TagGroup } from "../../components/tag";
 import Icon from "../../components/icon";
 import BackButton from "../../components/back-button";
 import { siteName } from "../../config";
@@ -61,7 +61,8 @@ const Projects: NextPage<Props> = ({ project }) => {
       </Head>
       <Page title={project.metadata.name} size={PageSize.Medium}>
         <ProjectProfile
-          src={project.metadata.profileImage || "/project-profile.svg"}
+          src={project.metadata.profileImage}
+          tags={project.metadata.tags || []}
         />
 
         <Section>
@@ -94,20 +95,37 @@ const Projects: NextPage<Props> = ({ project }) => {
 export default Projects;
 
 interface ProjectProfileProps {
-  src: string;
+  src?: string;
+  tags: string[];
 }
 
-const ProjectProfile: React.FC<ProjectProfileProps> = ({ src }) => (
-  <div className={styles.profileWrapper}>
-    <Image
+const ProjectProfile: React.FC<ProjectProfileProps> = ({ src, tags }) => {
+  let profile: React.ReactElement;
+  if (src) {
+    profile = <Image
       src={src}
       alt="Project profile image"
-      width={200}
-      height={200}
+      width={150}
+      height={150}
       className={styles.profile}
     />
-  </div>
-);
+  } else if (tags.length == 0) {
+    profile = <Image
+      src={"/project-profile.svg"}
+      alt="Project profile image"
+      width={150}
+      height={150}
+      className={styles.profile}
+    />
+  } else {
+    profile = (
+      <div className={styles.profile}>
+        <ProfileTag tagType={tags[0]} />
+      </div>
+    );
+  }
+  return <div className={styles.profileWrapper}>{profile}</div>;
+}
 
 const LinkList: React.FC<React.PropsWithChildren> = ({ children }) => (
   <ul className={styles.linkList}>{children}</ul>

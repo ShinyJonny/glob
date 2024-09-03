@@ -34,12 +34,14 @@ const InnerIcon: React.FC<InnerIconProps> = ({ src }) => (
   ></span>
 );
 
+type LinkIconDecoration = "none" | "circular";
+
 interface LinkIconProps {
   href: string;
   src: string;
   className?: string;
   external?: boolean;
-  circular?: boolean;
+  decoration: LinkIconDecoration;
 }
 
 export const LinkIcon: React.FC<LinkIconProps> = ({
@@ -47,11 +49,24 @@ export const LinkIcon: React.FC<LinkIconProps> = ({
   src,
   className,
   external,
-  circular,
+  decoration,
 }) => {
-  const cn = `${styles.container} ${styles.link} ${
-    circular ? styles.circularLink : ""
-  } ${className ?? ""}`;
+
+  let decorationClass: string;
+  switch (decoration) {
+    case "none":
+      decorationClass = "";
+      break;
+    case "circular":
+      decorationClass = styles.circularLink;
+      break;
+    default:
+      const _exhaustiveCheck: never = decoration;
+      decorationClass = "";
+  };
+
+  const cn = `${styles.container} ${styles.link} ${decorationClass} ${
+    className ?? ""}`;
 
   return external ? (
     <a href={href} className={cn}>

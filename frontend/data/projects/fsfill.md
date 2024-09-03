@@ -2,7 +2,7 @@
 name: Fsfill
 description: Fill unused space in the file system structure with bytes.
 repo: https://github.com/ShinyJonny/fsfill
-tags: [ wip, rust ]
+tags: [ rust, wip ]
 ---
 
 CLI utility that scans the file system structure and keeps track of the free (uninitialised) space.

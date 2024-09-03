@@ -1,5 +1,5 @@
 .profile {
-	--profile-size: clamp(150px, 32vw, 200px);
+	--profile-size: clamp(100px, 30vw, 150px);
 }
 
 .profileWrapper {
@@ -15,7 +15,8 @@
 .profile {
 	width: var(--profile-size) !important;
 	height: var(--profile-size) !important;
-	border: var(--border-size-thinner) solid var(--bg-lighter-color);
+	border: var(--border-size-thinner) solid var(--bg-light-color);
+	font-size: var(--profile-size);
 }
 
 .linkList {
@@ -46,24 +47,24 @@
 	font-size: clamp(0.8rem, 4vw, 1rem);
 }
 
-.description h1,
-.description h2,
-.description h3 {
+.description h3,
+.description h4,
+.description h5 {
 	font-weight: 400;
 	color: var(--accent-color);
 	line-height: 1.7em;
 }
 
-.description h1 {
+.description h3 {
 	font-size: 1.4em;
 	text-decoration: underline;
 }
 
-.description h2 {
+.description h4 {
 	font-size: 1.2em;
 }
 
-.description h3 {
+.description h5 {
 	font-size: 1.1em;
 	font-style: italic;
 }
@@ -83,4 +84,14 @@
 .description a:focus {
 	color: var(--accent-color);
 	outline: none;
+}
+
+.description li * {
+	display: inline;
+}
+
+.description li {
+	list-style: inside;
+	padding-bottom: 1.5em;
+	text-indent: 1.2em hanging;
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/ProjectCard.module.css";
 import { LinkIcon } from "./icon";
-import Tag from "./tag";
+import Tag, { ProfileTag } from "./tag";
 
 interface Props {
   id: string;
@@ -52,30 +52,51 @@ const CardBody: React.FC<Props> = ({
   description,
   profileImage,
   tags,
-}) => (
-  <div className={styles.body}>
-    <div className={styles.topLine}>
-      <div className={styles.titleLine}>
-        <Image
-          src={profileImage ? profileImage : "/project-profile.svg"}
-          alt={`Profile image of the project ${name}`}
-          width={80}
-          height={80}
-          className={styles.profileImage}
-        />
-        <h2 className={styles.title}>
-          <Link className={styles.titleLink} href={`/projects/${id}`}>
-            {name}
-          </Link>
-        </h2>
+}) => {
+  let profile: React.ReactElement;
+  if (profileImage) {
+    profile = <Image
+      src={profileImage}
+      alt={`Profile image of the project ${name}`}
+      width={80}
+      height={80}
+      className={styles.profileImage}
+    />;
+  } else if (tags.length == 0) {
+    profile = <Image
+      src="/project-profile.svg"
+      alt={`Profile image of the project ${name}`}
+      width={80}
+      height={80}
+      className={styles.profileImage}
+    />;
+  } else {
+    profile = (
+      <div className={styles.profileImage}>
+        <ProfileTag tagType={tags[0]} />
       </div>
-      {tags.map((t) => (
-        <Tag key={t} tagType={t} />
-      ))}
+    );
+  }
+
+  return(
+    <div className={styles.body}>
+      <div className={styles.topLine}>
+        <div className={styles.titleLine}>
+          {profile} 
+          <h2 className={styles.title}>
+            <Link className={styles.titleLink} href={`/projects/${id}`}>
+              {name}
+            </Link>
+          </h2>
+        </div>
+        {tags.map((t) => (
+          <Tag key={t} tagType={t} />
+        ))}
+      </div>
+      <span className={styles.description}>{description}</span>
     </div>
-    <span className={styles.description}>{description}</span>
-  </div>
-);
+  )
+};
 
 interface ControlsProps {
   repo: string;
@@ -87,7 +108,7 @@ const Controls: React.FC<ControlsProps> = ({ repo }) => (
       href={repo}
       src="/code.svg"
       className={styles.controlIcon}
-      circular={true}
+      decoration="none"
     />
   </div>
 );
